@@ -52,7 +52,7 @@ function getYears(finalsCallBack) {
 console.log(getYears(getFinals))
 // DONE
 
-/* Task 5: Implement a higher-order function called `getWinners`, that accepts the 
+/* Task 4: Implement a higher-order function called `getWinners`, that accepts the 
 callback function `getFinals()` and determine the winner (home or away) of each `finals` game. 
 Return the name of all winning countries in an array called `winners` */ 
 
@@ -72,7 +72,7 @@ function getWinners(finalCallBack) {
 console.log(getWinners(getFinals));
 // DONE
 
-/* Task 6: Implement a higher-order function called `getWinnersByYear` that accepts the 
+/* Task 5: Implement a higher-order function called `getWinnersByYear` that accepts the 
 following parameters and returns a set of strings "In {year}, {country} won the world cup!" 
 
 Parameters: 
@@ -80,28 +80,28 @@ Parameters:
  * callback function getYears
  */
 
-// function getWinnersByYear(cb1, cb2) {
-//     let winByYear = ""
-//     cb2(fifaData).forEach(function(item){
-//         winByYear.push(`In ${item.year}, ${item.country} won the world cup!`)
-//     });
-// };
-// console.log(getWinnersByYear())
+function getWinnersByYear(cb1, cb2) {
+    
+};
+console.log(getWinnersByYear())
 
 // getWinnersByYear();
 
-/* Task 7: Write a function called `getAverageGoals` that accepts a parameter `data` and 
+/* Task 6: Write a function called `getAverageGoals` that accepts a parameter `data` and 
 returns the the average number of home team goals and away team goals scored per match 
 (Hint: use .reduce and do this in 2 steps) */
 
-function getAverageGoals(data) {//Data is the parameter for the Array that is input
+function getAverageGoals(data) {
+    let totalGames = data.length
     let averagegoal = data.reduce(function(accumulator, item){
-        return accumulator + item["Home Team Goals"]+accumulator +item["Away Team Goals"]/851
+        //  console.log(`The accumulator ${accumulator}`)
+        //   console.log(`The current item ${item["Home Team Goals"]} `)
+        return accumulator + (item["Home Team Goals"]+item["Away Team Goals"])/totalGames
     },0);
     return averagegoal
 };
 console.log(getAverageGoals(fifaData))
-
+// Done
 
 /// STRETCH 🥅 //
 
