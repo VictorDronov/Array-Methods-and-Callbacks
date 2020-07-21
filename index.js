@@ -81,9 +81,13 @@ Parameters:
  */
 
 function getWinnersByYear(cb1, cb2) {
-    
-};
-console.log(getWinnersByYear())
+    const wins = cb1(getFinals)
+    const gettingYears = cb2(getFinals)
+    return wins.map(function(countryName,index){
+        return `In ${gettingYears[index]}, ${countryName} won the world cup}`
+    })
+}
+console.log(getWinnersByYear(getWinners,getYears))
 
 // getWinnersByYear();
 
